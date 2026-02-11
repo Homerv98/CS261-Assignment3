@@ -93,6 +93,10 @@ class Queue:
         """
         returns the front element of the queue without removing it.
         """
+
+        if self._head is None:
+            raise QueueException('Queue is empty')
+
         value = self._head.value
 
         return value
