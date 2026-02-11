@@ -1,9 +1,9 @@
-# Name:
-# OSU Email:
+# Name: Homero Vazquez
+# OSU Email: vazqueho@oregonstate.edu
 # Course: CS261 - Data Structures
-# Assignment:
-# Due Date:
-# Description:
+# Assignment: 3
+# Due Date: 2/10/2026
+# Description: stack ADT implementation
 
 
 from SLNode import SLNode
@@ -63,21 +63,41 @@ class Stack:
 
     def push(self, value: object) -> None:
         """
-        TODO: Write this implementation
+        add a new element to the top of the stack.
         """
-        pass
+
+        if self._head is None:
+            self._head = SLNode(value)
+            return
+
+        new_node = SLNode(value)
+        new_node.next = self._head
+        self._head = new_node
 
     def pop(self) -> object:
         """
-        TODO: Write this implementation
+        removes the top element from the stack and returns its value.
         """
-        pass
+
+        if self._head is None:
+            raise StackException('Stack is empty')
+
+        value = self._head.value
+        self._head = self._head.next
+
+        return value
 
     def top(self) -> object:
         """
-        TODO: Write this implementation
+        returns the value of the top element of the stack without removing it.
         """
-        pass
+
+        if self._head is None:
+            raise StackException('Stack is empty')
+
+        value = self._head.value
+
+        return value
 
 
 # ------------------- BASIC TESTING -----------------------------------------

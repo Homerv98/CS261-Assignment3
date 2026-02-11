@@ -95,6 +95,7 @@ class Queue:
         if self._current_size == self._sa.length():
             self._double_queue()
 
+        #move the back along with the added value
         self._back = self._increment(self._back)
         self._sa.set(self._back, value)
         self._current_size += 1
@@ -107,8 +108,10 @@ class Queue:
         if self._current_size == 0:
             raise QueueException("Queue is empty")
 
+        #store front value
         value = self._sa.get(self._front)
 
+        #move the front to the right
         self._front = self._increment(self._front)
         self._current_size -= 1
 
@@ -140,6 +143,7 @@ class Queue:
             new_array.set(i, self._sa.get(idx))
             idx = self._increment(idx)
 
+        #store new array and initialize front and back
         self._sa = new_array
         self._front = 0
         self._back = self._current_size - 1
