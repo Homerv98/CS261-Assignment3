@@ -116,7 +116,7 @@ class LinkedList:
         """
         cur = self._head
 
-        if index < 0 or index > self.length():
+        if index <= 0 or index > self.length():
             raise SLLException('Index out of range')
 
         for i in range(index):
@@ -158,6 +158,9 @@ class LinkedList:
         returns false if not.
         """
         cur = self._head
+
+        if self._head is None:
+            return False
 
         #iterate through valees and validate
         while cur.next:
