@@ -105,25 +105,11 @@ class Queue:
         remove and return the front element from the queue.
         """
 
-        #Empty queue
-        if self._current_size == 0:
-            raise QueueException("Queue is empty")
-
-
-        value = self._sa.get(self._front)
-        self._sa.set(self._front, None)
-        self._front = self._increment(self._front)
-        self._current_size -= 1
-
-        return value
 
     def front(self) -> object:
         """
         return front value without removing it.
         """
-        if self._size == 0:
-            raise QueueException("Queue is empty")
-        return self._sa.get(self._front)
 
     # The method below is optional, but recommended, to implement. #
     # You may alter it in any way you see fit.                     #
