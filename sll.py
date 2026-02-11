@@ -7,7 +7,7 @@
 
 
 from SLNode import *
-from main import Node
+#from main import Node
 
 
 class SLLException(Exception):
@@ -83,7 +83,7 @@ class LinkedList:
         """
         insert a new node at the back of the linked list
         """
-        new_node = SLNode(value)
+        new_node = SLNodeNode(value)
 
         if self._head is None:
             return new_node
@@ -195,7 +195,7 @@ class LinkedList:
         tail = new_list._head
 
         #copy the slice you want
-        for i in range(size - 1):
+        for i in range(size):
             cur = cur.next
             tail.next = SLNode(cur.value)
             tail = tail.next
