@@ -96,7 +96,7 @@ class Queue:
             self._double_queue()
 
 
-        self._sa.set(self._current_size, value)
+        self._sa[self._current_size] = value
         self._current_size += 1
 
 
