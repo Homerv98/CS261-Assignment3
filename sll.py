@@ -7,7 +7,7 @@
 
 
 from SLNode import *
-#from main import Node
+
 
 
 class SLLException(Exception):
@@ -83,7 +83,7 @@ class LinkedList:
         """
         insert a new node at the back of the linked list
         """
-        new_node = SLNodeNode(value)
+        new_node = SLNode(value)
 
         if self._head is None:
             return new_node
@@ -106,7 +106,7 @@ class LinkedList:
 
         for i in range(index):
             cur = cur.next
-        new_node = Node(value)
+        new_node = SLNode(value)
         new_node.next = cur.next
         cur.next = new_node
 
