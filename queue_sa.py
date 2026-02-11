@@ -95,8 +95,8 @@ class Queue:
         if self._current_size == self._sa.length():
             self._double_queue()
 
-
-        self._sa[self._current_size] = value
+        self._back = self._increment(self._back)
+        self._sa.set(self._back, value)
         self._current_size += 1
 
 
@@ -143,7 +143,7 @@ class Queue:
 
         self._sa = new_array
         self._front = 0
-        self._back = self._current_size
+        self._back = self._current_size - 1
 
 
 # ------------------- BASIC TESTING -----------------------------------------
