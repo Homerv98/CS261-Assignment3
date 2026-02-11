@@ -31,6 +31,6 @@ for i in range(5):
 print_list(head)
 insert("Hi!", head, 3)
 
-#This should print 0, 1, 2, Hi!, 3, 4, End of list. but our insert
+##This should print 0, 1, 2, Hi!, 3, 4, End of list. but our insert
 #cuts off the tail of the list
 print_list(head)

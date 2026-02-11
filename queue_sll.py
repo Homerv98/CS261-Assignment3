@@ -1,8 +1,8 @@
-# Name:
-# OSU Email:
+# Name: Homero Vazquez
+# OSU Email: vazqueho@oregonstate.edu
 # Course: CS261 - Data Structures
-# Assignment:
-# Due Date:
+# Assignment: 3
+# Due Date: 2/10/2026
 # Description:
 
 
