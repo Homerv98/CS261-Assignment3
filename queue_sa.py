@@ -90,14 +90,13 @@ class Queue:
     def enqueue(self, value: object) -> None:
         """
         add a new value to the end of the queue.
-
         """
 
-        if self.size == self._sa.length():
+        if self._current_size == self._sa.length():
             self._double_queue()
 
-        self._back = self._increment(self._back)
-        self._sa.set(self._back, value)
+
+        self._sa.set(self._current_size, value)
         self._current_size += 1
 
 
@@ -105,8 +104,11 @@ class Queue:
         """
         remove and return the front element from the queue.
         """
+
+        #Empty queue
         if self._current_size == 0:
             raise QueueException("Queue is empty")
+
 
         value = self._sa.get(self._front)
         self._sa.set(self._front, None)
@@ -128,19 +130,19 @@ class Queue:
 
     def _double_queue(self) -> None:
         """
-        TODO: Write this implementation
+        This method will double the size of the list.
         """
         new_array = StaticArray(self._sa.length() * 2)
 
         # copy out in queue order
         idx = self._front
-        for i in range(self._size):
+        for i in range(self._current_size):
             new_array.set(i, self._sa.get(idx))
             idx = self._increment(idx)
 
         self._sa = new_array
         self._front = 0
-        self._back = self._size
+        self._back = self._current_size
 
 
 # ------------------- BASIC TESTING -----------------------------------------
