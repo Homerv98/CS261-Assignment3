@@ -116,8 +116,10 @@ class LinkedList:
         """
         cur = self._head
 
-        if index < 0 or index > self.length():
+        if index < 0 or index > self.length() - 1 :
             raise SLLException('Index out of range')
+
+
 
         for i in range(index):
             cur = cur.next
